@@ -33,7 +33,7 @@ def contact_view(request):
 
 
 def contact_view_exito(request):
-    return render(request , 'contacto.html',{})
+    return render(request , 'contacto_exitoso.html',{})
 
          
 
