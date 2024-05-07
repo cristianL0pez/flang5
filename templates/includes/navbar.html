@@ -20,13 +20,19 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'contact_form' %}">contactanos</a>
         </li>
-        
-        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+           <p class="d-inline">bienvenido {{ user.username }}</p>
+            <a class="nav-link d-inline" href="{% url 'logout' %}">Cerrar sesión</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+        </li>
+        {% endif %}
+    </ul>
     </div>
   </div>
 </nav>

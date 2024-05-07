@@ -15,6 +15,7 @@ class Flan(models.Model):
     imagen = models.URLField(blank=False)
     slug = models.SlugField(unique=True, max_length=255, blank=True)
     is_private = models.BooleanField(default=False)
+    precio = models.DecimalField(max_digits=10, decimal_places=2, default=500)
     
     
     def save(self, *args, **kwargs):
